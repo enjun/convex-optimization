@@ -7,7 +7,7 @@ alpha = 0.01;
 beta = 0.5;
 
 grad = @(x) A'*(1./(1-A*x)) + 1./(1-x) - 1./(1+x);
-hessian = @(x) A'*diag(1./(A*x-1).^2)*A  + diag(1./(1-x).^2 + diag(1./(1+x).^2));
+hessian = @(x) A'*diag(1./(A*x-1).^2)*A  + diag(1./(1-x).^2 + 1./(1+x).^2);
 f = @(x) - sum(log(1 - A*x)) - sum(log(1-x)) - sum(log(1+x));
 
 
